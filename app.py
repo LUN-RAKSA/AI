@@ -488,33 +488,67 @@ html, body, [class*="css"] {
     border-radius: 50%;
 }
 
-/* CHAT INPUT */
+/* =========================================================
+   ZENTRA AI - TRANSPARENT CHAT INPUT
+   ========================================================= */
 
+/* Remove the background from the bottom input area */
+[data-testid="stBottom"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Remove background from the chat input wrapper */
 [data-testid="stChatInput"] {
-    border: 1px solid rgba(178, 113, 255, 0.55) !important;
-    border-radius: 24px !important;
-
-    background: rgba(24, 13, 46, 0.90) !important;
-
-    box-shadow:
-        0 0 20px rgba(135, 69, 255, 0.12),
-        inset 0 1px 0 rgba(255,255,255,0.04);
-
-    backdrop-filter: blur(20px);
-
-    transition: all 0.3s ease;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
-[data-testid="stChatInput"]:focus-within {
-    border-color: #b77aff !important;
-
-    box-shadow:
-        0 0 0 2px rgba(154, 77, 255, 0.15),
-        0 0 30px rgba(135, 69, 255, 0.25);
+/* Chat input inner container */
+[data-testid="stChatInput"] > div {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
+/* Text input itself */
 [data-testid="stChatInput"] textarea {
+    background: transparent !important;
+    background-color: transparent !important;
     color: white !important;
+    box-shadow: none !important;
+}
+
+/* Remove background from bottom container's inner layers */
+[data-testid="stBottom"] > div,
+[data-testid="stBottom"] > div > div {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Placeholder text */
+[data-testid="stChatInput"] textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Keep a beautiful transparent purple border */
+[data-testid="stChatInput"] {
+    border: 1px solid rgba(190, 100, 255, 0.8) !important;
+    border-radius: 14px !important;
+}
+
+/* Focus effect */
+[data-testid="stChatInput"]:focus-within {
+    border: 1px solid #D36BFF !important;
+    box-shadow: 0 0 12px rgba(180, 70, 255, 0.35) !important;
+}
+
+/* Send button */
+[data-testid="stChatInput"] button {
+    background: rgba(120, 50, 180, 0.35) !important;
+    color: white !important;
+    border-radius: 10px !important;
 }
 
 /* TYPING DOTS */
